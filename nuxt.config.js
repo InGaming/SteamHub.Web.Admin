@@ -1,5 +1,8 @@
 
 module.exports = {
+  router: {
+    middleware: 'auth'
+  },
   /*
   ** Headers of the page
   */
@@ -20,7 +23,9 @@ module.exports = {
     { src: '~plugins/nuxt-quill-plugin.js', ssr: false }
   ],
   modules: [
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    'cookie-universal-nuxt',
+    ['cookie-universal-nuxt', { alias: 'cookiz' }]
   ],
   css: [
     '~/assets/style/app.styl',

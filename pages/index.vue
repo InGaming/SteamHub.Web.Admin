@@ -39,6 +39,8 @@
 
 <script>
   export default {
+    async asyncData () {
+    },
     data: () => ({
       submitBtn: '提交',
       types: ['游戏推荐', '业内资讯', '工具整合', '使用技巧'],
@@ -67,6 +69,8 @@
         }
       }
     }),
+    created: function () {
+    },
     methods: {
       onEditorChange ({ editor, html, text }) {
         this.content = html
@@ -74,8 +78,7 @@
       submit: async function () {
         if (this.content === '' || this.title === '' || this.author === '' || this.type === '') {
         } else {
-          this.$axios.defaults.headers.post['Authorization'] = 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjEsImlhdCI6MTUzMjQzNTY4NSwiZXhwIjo0MTI0NDM1Njg1fQ.Y3G3jBNF2EN2vPqxU3q3Pnrhm22-Ry2Ut-oh6pGwJx4'
-          await this.$axios.$post('http://localhost:3333/api/v1/articles/', {
+          await this.$axios.$post('https://api.steamhub.cn/api/v1/articles/', {
             title: this.title,
             author: this.author,
             type: this.type,

@@ -35,6 +35,8 @@
 
 <script>
   export default {
+    async asycnData () {
+    },
     data: () => ({
       dialog: false,
       bottomNav: 1,
