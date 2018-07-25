@@ -103,7 +103,4 @@
   .ql-tooltip {
     left: 0 !important
   }
-  iframe {
-    width: 100%
-  }
 </style>
